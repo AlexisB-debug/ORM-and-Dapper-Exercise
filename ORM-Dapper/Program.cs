@@ -42,6 +42,16 @@ namespace ORM_Dapper
             // {
             //     Console.WriteLine(ex.Message);
             // }
+            
+            Product productToUpdate = productRepository.GetProductByProductID(941);
+            
+            productToUpdate.Name = "Alexis Successfully Updated";
+            productToUpdate.Price = 700.00;
+            productToUpdate.CategoryID = 10;
+            productToUpdate.OnSale = false;
+            productToUpdate.StockLevel = 339;
+            
+            productRepository.UpdateProduct(productToUpdate);
 
             IEnumerable<Product> products = productRepository.GetAllProducts();
 
