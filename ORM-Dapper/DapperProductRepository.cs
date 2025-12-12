@@ -33,4 +33,11 @@ public class DapperProductRepository : IProductRepository
             "UPDATE products SET Name = @name, Price = @price, CategoryID = @categoryID, OnSale = @onSale, StockLevel = @stock WHERE ProductID = @productID",
             new { productID = product.ProductID, name = product.Name, price = product.Price, CategoryID = product.CategoryID, onSale = product.OnSale, stock = product.StockLevel });
     }
+
+    public void DeleteProduct(int productID)
+    {
+        _dbConnection.Execute("DELETE FROM sales WHERE ProductID = @productID;", new { productID });
+        _dbConnection.Execute("DELETE FROM reviews WHERE ProductID = @productID;", new { productID });
+        _dbConnection.Execute("DELETE FROM products WHERE ProductID = @productID;", new { productID });
+    }
 }

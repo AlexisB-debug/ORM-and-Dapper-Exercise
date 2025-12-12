@@ -43,15 +43,17 @@ namespace ORM_Dapper
             //     Console.WriteLine(ex.Message);
             // }
             
-            Product productToUpdate = productRepository.GetProductByProductID(941);
+            // Product productToUpdate = productRepository.GetProductByProductID(941);
+            //
+            // productToUpdate.Name = "Alexis Successfully Updated";
+            // productToUpdate.Price = 700.00;
+            // productToUpdate.CategoryID = 10;
+            // productToUpdate.OnSale = false;
+            // productToUpdate.StockLevel = 339;
+            //
+            // productRepository.UpdateProduct(productToUpdate);
             
-            productToUpdate.Name = "Alexis Successfully Updated";
-            productToUpdate.Price = 700.00;
-            productToUpdate.CategoryID = 10;
-            productToUpdate.OnSale = false;
-            productToUpdate.StockLevel = 339;
-            
-            productRepository.UpdateProduct(productToUpdate);
+            // productRepository.DeleteProduct(941);
 
             IEnumerable<Product> products = productRepository.GetAllProducts();
 
